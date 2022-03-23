@@ -1,0 +1,17 @@
+<%- include('./partials/header') %> 
+
+<h2>Let it out.</h2>
+<form action="/vent" method="post" class="form-group">
+    
+    <label for="titleBox">Title</label>
+    <input type="text" class="form-control" name="title" id="titleBox">
+
+    <div class="content">
+        <label for="contentBox">Content</label>
+        <textarea name="content" class="form-control" cols="30" rows="10" id="contentBox"></textarea>   
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="formButton">Submit</button>
+</form>
+
+<%- include('./partials/footer') %> 

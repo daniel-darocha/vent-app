@@ -1,0 +1,21 @@
+<%- include('./partials/header.ejs') %>
+
+<% if (posts.length === 0) { %> 
+    <h3>Looks like nobody has posted anything yet.</h3>
+    
+ <% } else { %>  
+    
+    <% posts.slice().reverse().forEach(function(p){  %>
+        <% console.log(p.postTitle); %>
+            <h1><%=p.postTitle %></h1>
+            <p><%=p.postBody.substring(0,100) + "... "%> <a href="/posts/<%=p.postTitle%>">Read More</a></p> 
+        <% }) %> 
+  
+  
+    
+ <% } %>  
+
+
+
+
+
