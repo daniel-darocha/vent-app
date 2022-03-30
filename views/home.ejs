@@ -6,16 +6,25 @@
  <% } else { %>  
     
     <% posts.slice().reverse().forEach(function(p){  %>
-        <% console.log(p.postTitle); %>
+        <% var titleName = p.postTitle %> 
             <h1><%=p.postTitle %></h1>
             <p><%=p.postBody.substring(0,100) + "... "%> <a href="/posts/<%=p.postTitle%>">Read More</a></p> 
+            <% if (p.userId === cookieName ){  %>
+                <form action="/delete" method="post">
+                    <button type="submit" name="postBack" value="<%=p.postTitle%>">Delete Post</button>
+                </form>
+                <!-- <a href="/delete"><p id="delete">Delete Post</p></a> -->
+                <% console.log(p.userId +" Is equal to " + cookieName) %> 
+                 <% } else {console.log(p.userId + " is not equal to "+ cookieName)} %> 
         <% }) %> 
-  
-  
     
  <% } %>  
 
 
+
+ <!-- <form action="/delete" method="post">
+    <button type="submit" value="hello">Delete</button>
+</form> -->
 
 
 

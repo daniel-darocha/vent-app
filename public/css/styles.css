@@ -43,8 +43,14 @@ html, body {
 
 .content{
     margin-top: 2%;
+    
 }
 
+input[type="text"], textarea {
+
+    background-color : #1b1b1b; 
+    color: white;
+  }
 /* ID's */
 
 #formButton {
@@ -54,3 +60,8 @@ html, body {
     font-weight: bold;
     font-size:x-large;
 }
+#contentBox{
+    background-color : #1b1b1b; 
+    color: white;
+}
+
