@@ -29,6 +29,7 @@ html, body {
 }
 
 .footer {
+    
 	position: absolute;
 	text-align: center;
 	bottom: 0;
@@ -72,5 +73,11 @@ input[type="text"], textarea {
 #contentBox{
     background-color : #1b1b1b; 
     color: white;
+}
+#postButton{
+    background-color: #777;
+    margin-top: 5px;
+    color: white;
+    font-weight: bolder;
 }
 
