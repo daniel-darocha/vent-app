@@ -1,0 +1,17 @@
+<%- include('./partials/header.ejs') %>
+
+<% if (posts.length === 0) { %> 
+    <h3>Looks like nobody has posted anything yet.</h3>
+    
+ <% } else { %>  
+    
+    <% posts.slice().reverse().forEach(function(p){  %>
+        <% var titleName = p.postTitle %> 
+            <h1><%=p.postTitle %></h1>
+            <p><%=p.postBody.substring(0,100) + "... "%> <a href="/posts/<%=p.postTitle%>">Read More</a></p> 
+                <form action="/adelete" method="post">
+                    <button type="submit" name="postBack" id="formButton" class="btn btn-primary" value="<%=p.postTitle%>">Delete Post</button>
+                </form>
+        <% }) %> 
+ <% } %>  
+ <%- include('./partials/footer') %> 
