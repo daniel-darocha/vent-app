@@ -9,9 +9,9 @@
         <% var titleName = p.postTitle %> 
             <h1><%=p.postTitle %></h1>
             <p><%=p.postBody.substring(0,100) + "... "%> <a href="/posts/<%=p.postTitle%>">Read More</a></p> 
-            <% if (p.userId === cookieName ){  %>
+            <% if (cookieName === p.userId ){  %>
                 <form action="/delete" method="post">
-                    <button type="submit" name="postBack" id="formButton" class="btn btn-primary btn-xs" value="<%=p.postTitle%>">Delete Post</button>
+                    <button type="submit" name="postBack" id="formButton" class="btn btn-primary btn-sm" value="<%=p.postTitle%>">Delete Post</button>
                 </form>
                 <% console.log(p.userId +" Is equal to " + cookieName) %> 
                  <% } else {console.log(p.userId + " is not equal to "+ cookieName)} %> 

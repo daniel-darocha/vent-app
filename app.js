@@ -29,10 +29,9 @@ var posts = [];
 
 app.get("/", function (req, res) {
   let user = "user" + Math.floor(Math.random() * 999999999);
-
-  if (req.cookies.name === undefined) {
+  if (typeof req.cookies.name === 'undefined') {
     res.cookie("name", user);
-    res.render("home", { posts: posts });
+    res.render("home", { posts: posts, cookieName: req.cookies.name});
   } else {
     res.render("home", { posts: posts, cookieName: req.cookies.name });
   }
